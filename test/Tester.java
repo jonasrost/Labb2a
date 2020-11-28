@@ -36,7 +36,7 @@ public class Tester {
     @Test
     public void testChangeSpeedWhileTruckBedLiftedNotOk() {
         Scania scania = new Scania();
-        scania.increaseAngleOfTruckBedTo(50);
+        scania.increaseAngleOfTruckBed(50);
         scania.gas(0.5);
         assertTrue(scania.getCurrentSpeed() == 0);
     }

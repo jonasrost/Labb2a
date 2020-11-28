@@ -12,7 +12,7 @@ public class Saab95 extends Car {
      * Constructor of the class that calls upon the constructor in 'Car'.
      */
     public Saab95(){
-        super(2, 125, Color.red, "Saab95");
+        super(2, 125, Color.red, "Saab95", 0, 160);
         turboOn = false;
     }
 

@@ -8,7 +8,7 @@ public class Workshop<VehicleType extends Vehicle> {
     /***
      * An integer that represent the maximum value of cars which the workshop can contain.
      */
-    int maxVehicles;
+    private int maxVehicles;
 
     /**Constructor that creates a new ArrayList. */
     public Workshop(int maxVehicles) {

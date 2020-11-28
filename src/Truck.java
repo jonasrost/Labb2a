@@ -10,8 +10,8 @@ public abstract class Truck extends Vehicle {
      * @param color the color of the truck
      * @param modelName the model of the truck
      */
-    public Truck(int nrDoors, double enginePower, Color color, String modelName) {
-        super(nrDoors, enginePower, color, modelName);
+    public Truck(int nrDoors, double enginePower, Color color, String modelName, double xCord, double yCord) {
+        super(nrDoors, enginePower, color, modelName, xCord, yCord);
     }
 
 }

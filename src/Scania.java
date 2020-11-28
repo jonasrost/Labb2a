@@ -13,7 +13,7 @@ public class Scania extends Truck{
      * Constructor of the class that calls upon the constructor in 'Truck'.
      */
     public Scania() {
-        super(2, 400, Color.white, "Scania");
+        super(2, 400, Color.white, "Scania", 0, 320);
         this.truckBedAngle = 0;
     }
 
@@ -23,8 +23,8 @@ public class Scania extends Truck{
      * @param value the new angle of the truck bed
      */
     public void decreaseAngleOfTruckBedTo(int value) {
-        if (value >= 0 && value < this.truckBedAngle)
-            truckBedAngle = value;
+        if ((truckBedAngle - value) >= 0 && (truckBedAngle - value) < this.truckBedAngle)
+            truckBedAngle -= value;
     }
 
     /***
@@ -32,9 +32,9 @@ public class Scania extends Truck{
      * [truckBedAngle, 70].
      * @param value the new angle of the truck bed
      */
-    public void increaseAngleOfTruckBedTo(int value) {
-        if (getCurrentSpeed() == 0 && value > this.truckBedAngle && value <= 70)
-            truckBedAngle = value;
+    public void increaseAngleOfTruckBed(int value) {
+        if (getCurrentSpeed() == 0 && (truckBedAngle + value) > this.truckBedAngle && (truckBedAngle + value) <= 70)
+            truckBedAngle += value;
     }
 
     /***

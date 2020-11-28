@@ -9,7 +9,7 @@ public class ArticulatedLorry extends Truck {
 
     /** Constructor for Class that calls for Supertype's constructor and assigns a {@code Transporter} object and assigns {@code rampLifted} to true.*/
     public ArticulatedLorry() {
-        super(2, 800, Color.blue, "ArticulatedLorry");
+        super(2, 800, Color.blue, "ArticulatedLorry", 0, 0);
         parentTransporter = new Transporter<>(this.getXCoordinate(), this.getYCoordinate());
         rampLifted = true;
     }

@@ -22,7 +22,7 @@ public abstract class Vehicle implements Movable {
     private double yCord;
 
     /*** Initializes the start direction of the car */
-    protected int direction = NORTH;
+    protected int direction = EAST;
 
     /***
      * Constructor of the class
@@ -31,13 +31,13 @@ public abstract class Vehicle implements Movable {
      * @param color the color of the car
      * @param modelName the model of the car
      */
-    public Vehicle(int nrDoors, double enginePower, Color color, String modelName){
+    public Vehicle(int nrDoors, double enginePower, Color color, String modelName, double xCord, double yCord){
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.modelName = modelName;
-        this.xCord = 0;
-        this.yCord = 0;
+        this.xCord = xCord;
+        this.yCord = yCord;
         stopEngine();
 
         // Fills the arrays with values corresponding to a correct left respective right turn,
@@ -83,6 +83,14 @@ public abstract class Vehicle implements Movable {
      */
     public Color getColor(){
         return this.color;
+    }
+
+    /***
+     * Returns the modelname of the car
+     * @return the string containing the modelname of the car
+     */
+    public String getModelName() {
+        return modelName;
     }
 
     /***
@@ -142,11 +150,11 @@ public abstract class Vehicle implements Movable {
      */
     public void move() {
         if (direction == NORTH)
-            yCord = yCord + currentSpeed;
+            yCord = yCord - currentSpeed;
         else if (direction == EAST)
             xCord = xCord + currentSpeed;
         else if (direction == SOUTH)
-            yCord = yCord - currentSpeed;
+            yCord = yCord + currentSpeed;
         else
             xCord = xCord - currentSpeed;
     }
@@ -163,6 +171,14 @@ public abstract class Vehicle implements Movable {
      */
     public void turnRight() {
         this.direction = RIGHTTURN[direction];
+    }
+
+    /***
+     * Turns the vehicle 180 degrees.
+     */
+    public void turn180Degrees() {
+        this.turnLeft();
+        this.turnLeft();
     }
 
     /***
@@ -203,7 +219,7 @@ public abstract class Vehicle implements Movable {
      * @param x new x coordinate
      * @param y new y coordinate
      */
-    protected void changePosition(double x, double y) {
+    public void changePosition(double x, double y) {
         this.setXCoordinate(x);
         this.setYCoordinate(y);
     }

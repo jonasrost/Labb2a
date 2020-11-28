@@ -12,8 +12,8 @@ public abstract class Car extends Vehicle implements Transportable{
      * @param color the color of the truck
      * @param modelName the model of the truck
      */
-    public Car(int nrDoors, double enginePower, Color color, String modelName) {
-        super(nrDoors, enginePower, color, modelName);
+    public Car(int nrDoors, double enginePower, Color color, String modelName, double xCord, double yCord) {
+        super(nrDoors, enginePower, color, modelName, xCord, yCord);
     }
 
     public void assign() {
