@@ -8,18 +8,16 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-// This panel represent the animated part of the view with the car images.
-
+/***
+ * This panel represent the animated part of the view with the car images.
+ */
 public class DrawPanel extends JPanel{
 
-    // Just a single image, TODO: Generalize
+
     List<BufferedImage> objectImages;
-    // BufferedImage objectImage;
-    // To keep track of a singel cars position
-    // Point objectPoint = new Point();
+
     List<Point> objectPoints;
 
-    // TODO: Make this general for all cars
     void moveit(int x, int y, int indexOfCar){
         Point p = objectPoints.get(indexOfCar);
         p.x = x;
@@ -52,7 +50,6 @@ public class DrawPanel extends JPanel{
     }
 
     // This method is called each time the panel updates/refreshes/repaints itself
-    // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -1,7 +1,7 @@
 import java.awt.*;
 
 /***
- * An abstract class that represents a car, which implements the interface 'Movable'.
+ * An abstract class that represents a car, which implements the interface 'Movable' and extends the class "Vehicle".
  */
 public abstract class Vehicle implements Movable {
 
